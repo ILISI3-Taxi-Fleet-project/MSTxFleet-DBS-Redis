@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  cache:
+    container_name: redis
+    hostname: redis
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379'
+    command: redis-server --save 20 1 --loglevel warning
+    #    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - $ILISI_LAB/redis/cache:/data
+    networks:
+      - redis-compose-network
+  redis-commander:
+    container_name: redis-commander
+    image: rediscommander/redis-commander
+    hostname: redis-commander
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - '1409:8081'
+    networks:
+      - redis-compose-network
+  #volumes:
+  #  cache:
+  #   driver: local
+
+networks:
+  redis-compose-network:
+    driver: bridge
