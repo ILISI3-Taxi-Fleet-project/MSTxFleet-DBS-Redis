@@ -1,9 +1,8 @@
-
 spring:
-  docker:
-    compose:
-      file: ./MSTxFleet-DBS-Redis/compose.yaml
   application:
     name: MSTxFleet-DBS-Redis
+  cloud:
+    discovery:
+      enabled: true
 server:
   port: 0
