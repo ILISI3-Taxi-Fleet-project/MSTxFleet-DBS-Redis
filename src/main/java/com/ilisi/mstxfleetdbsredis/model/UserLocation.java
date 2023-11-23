@@ -12,5 +12,5 @@ public record UserLocation(
         String location,
         String userType,
         Boolean isOnline,
-        Instant creationAt) {
+        Instant createdAt) {
 }
