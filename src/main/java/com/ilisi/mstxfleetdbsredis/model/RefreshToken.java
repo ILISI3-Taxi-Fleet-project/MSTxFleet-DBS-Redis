@@ -3,6 +3,7 @@ package com.ilisi.mstxfleetdbsredis.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
 import java.time.Instant;
@@ -12,8 +13,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RefreshToken {
-    private String id;
-
+    @Id
     private String token;
     private String userId;
     private Instant expiration;
