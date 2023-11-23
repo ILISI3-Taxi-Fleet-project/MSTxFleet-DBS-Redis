@@ -1,6 +1,7 @@
 package com.ilisi.mstxfleetdbsredis.config;
 
-import com.ilisi.mstxfleetdbsredis.restRepository.ActiveUserLocation;
+import com.ilisi.mstxfleetdbsredis.model.RefreshToken;
+import com.ilisi.mstxfleetdbsredis.model.UserLocation;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -11,6 +12,7 @@ public class ExposeEntityIdRestConfiguration implements RepositoryRestConfigurer
 
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
-        config.exposeIdsFor(ActiveUserLocation.class);
+        config.exposeIdsFor(UserLocation.class);
+        config.exposeIdsFor(RefreshToken.class);
     }
 }
