@@ -44,7 +44,7 @@ public class KafkaConsumer {
                 tripRestRepository.save(trip);
             } else {
                 log.info("Accepting trip");
-                Trip trip = tripRestRepository.findById(message.get("tripId").toString()).orElseThrow(
+                Trip trip = tripRestRepository.findById(message.get("passengerId").toString()).orElseThrow(
                         () -> new RuntimeException("Trip not found")
                 );
                 trip.setDriverId(message.get("driverId").toString());
