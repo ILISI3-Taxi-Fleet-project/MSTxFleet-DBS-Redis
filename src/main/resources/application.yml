@@ -2,4 +2,4 @@ spring:
   application:
     name: MSTxFleet-DBS-Redis
   profiles:
-    active: dev
+    active: prod
