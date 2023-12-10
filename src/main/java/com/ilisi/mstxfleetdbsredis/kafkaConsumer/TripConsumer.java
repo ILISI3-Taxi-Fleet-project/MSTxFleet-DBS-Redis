@@ -1,4 +1,4 @@
-package com.ilisi.mstxfleetdbsredis.kafkalistener;
+package com.ilisi.mstxfleetdbsredis.kafkaConsumer;
 
 
 
@@ -18,7 +18,7 @@ import java.util.Map;
 
 @Service
 @Slf4j
-public class KafkaConsumer {
+public class TripConsumer {
 
 
     @Autowired
